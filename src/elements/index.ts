@@ -1,22 +1,23 @@
-import Input, { input } from './Input'
-import Label from './Label'
-import Button from './Button'
-import TextArea from './TextArea'
-import Checkbox from './Checkbox'
-import Radio from './Radio'
-import Select from './Select'
-import Option from './Option'
-import NotFound from './NotFound'
+import Input, { input, ItemInput } from "./Input";
+import Label from "./Label";
+import Button from "./Button";
+import TextArea from "./TextArea";
+import Checkbox from "./Checkbox";
+import Radio from "./Radio";
+import Select from "./Select";
+import Option from "./Option";
+import NotFound from "./NotFound";
 
-type value = string | undefined
+type value = string | undefined;
 
-function variable (value: value, infix = '', prefix = '', suffix = '') {
-  return `var(--${prefix}${value || infix}${suffix})`
+function variable(value: value, infix = "", prefix = "", suffix = "") {
+  return `var(--${prefix}${value || infix}${suffix})`;
 }
 
 export {
   input,
   Input,
+  ItemInput,
   Label,
   Button,
   TextArea,
@@ -25,5 +26,5 @@ export {
   Select,
   Option,
   NotFound,
-  variable
-}
+  variable,
+};

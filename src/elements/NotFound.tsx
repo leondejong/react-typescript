@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const NotFound = styled.section`
   position: fixed;
@@ -6,10 +6,10 @@ const NotFound = styled.section`
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3rem;
-`
+`;
 
-function NotFoundComponent () {
-  return <NotFound>404: Not Found</NotFound>
+function NotFoundComponent() {
+  return <NotFound>404: Not Found</NotFound>;
 }
 
-export default NotFoundComponent
+export default NotFoundComponent;

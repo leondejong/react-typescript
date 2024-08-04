@@ -1,5 +1,5 @@
-# React TypeScript
+# React TypeScript Example
 
-Install: `yarn`  
-Run: `yarn start`  
-Build: `yarn build`  
+Install: `pnpm install`  
+Run: `pnpm dev`  
+Build: `pnpm build`

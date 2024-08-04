@@ -1,21 +1,23 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { variable as v } from './'
+import type { Color } from "../state";
 
-interface Props {
-  color?: string
-}
+import { variable as v } from "./";
 
-const Label = styled.label`
+type LabelProps = {
+  color?: Color;
+};
+
+const Label = styled.label<LabelProps>`
   vertical-align: middle;
-  color: ${(props: Props) => v(props.color, 'medium')};
+  color: ${(props: LabelProps) => v(props.color, "medium")};
   cursor: pointer;
 
   &:hover,
   &:focus,
   &:active {
-    color: ${(props: Props) => v(props.color, 'medium', '', '-tint')};
+    color: ${(props: LabelProps) => v(props.color, "medium", "", "-tint")};
   }
-`
+`;
 
-export default Label
+export default Label;

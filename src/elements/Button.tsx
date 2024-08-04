@@ -1,27 +1,31 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { variable as v } from './'
+import type { Color } from "../state";
 
-interface Props {
-  background?: string
-  border?: string
-  color?: string
-}
+import { variable as v } from "./";
 
-const Button = styled.button`
+type ButtonProps = {
+  background?: Color;
+  border?: Color;
+  color?: Color;
+};
+
+const Button = styled.button<ButtonProps>`
   padding: 0.4375rem 0.9375rem;
-  border: 0.0625rem solid ${(props: Props) => v(props.border, 'medium')};
+  border: 0.0625rem solid ${(props: ButtonProps) => v(props.border, "medium")};
   border-radius: 0.25rem;
-  background: ${(props: Props) => v(props.background, 'medium')};
-  color: ${(props: Props) => v(props.color, 'white')};
+  background: ${(props: ButtonProps) => v(props.background, "medium")};
+  color: ${(props: ButtonProps) => v(props.color, "white")};
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 
   &:hover,
   &:focus,
   &:active {
-    background: ${(props: Props) => v(props.background, 'medium', '', '-tint')};
-    border-color: ${(props: Props) => v(props.border, 'medium', '', '-tint')};
+    background: ${(props: ButtonProps) =>
+      v(props.background, "medium", "", "-tint")};
+    border-color: ${(props: ButtonProps) =>
+      v(props.border, "medium", "", "-tint")};
   }
 
   &:disabled,
@@ -29,6 +33,6 @@ const Button = styled.button`
     pointer-events: none;
     opacity: 0.5;
   }
-`
+`;
 
-export default Button
+export default Button;

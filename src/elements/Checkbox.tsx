@@ -1,12 +1,14 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { variable as v } from './'
+import type { Color } from "../state";
 
-interface Props {
-  color?: string
-}
+import { variable as v } from "./";
 
-const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+type CheckboxProps = {
+  color?: Color;
+};
+
+const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -26,7 +28,7 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
   }
 
@@ -34,9 +36,9 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
     display: inline-block;
     top: 0;
     left: 0;
-    width: 0.75rem;
-    height: 0.75rem;
-    border: 0.125rem solid ${(props: Props) => v(props.color, 'medium')};
+    width: 1rem;
+    height: 1rem;
+    border: 0.125rem solid ${(props: CheckboxProps) => v(props.color, "medium")};
   }
 
   &::after {
@@ -45,20 +47,21 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
     left: 0.25rem;
     width: 0.5rem;
     height: 0.5rem;
-    background: ${(props: Props) => v(props.color, 'medium')};
+    background: ${(props: CheckboxProps) => v(props.color, "medium")};
   }
 
   &:hover::before,
   &:focus::before,
   &:active::before {
     border: 0.125rem solid
-      ${(props: Props) => v(props.color, 'medium', '', '-tint')};
+      ${(props: CheckboxProps) => v(props.color, "medium", "", "-tint")};
   }
 
   &:hover::after,
   &:focus::after,
   &:active::after {
-    background: ${(props: Props) => v(props.color, 'medium', '', '-tint')};
+    background: ${(props: CheckboxProps) =>
+      v(props.color, "medium", "", "-tint")};
   }
 
   &:checked::after {
@@ -75,6 +78,6 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
     pointer-events: none;
     opacity: 0.5;
   }
-`
+`;
 
-export default Checkbox
+export default Checkbox;

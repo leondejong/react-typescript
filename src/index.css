@@ -1,13 +1,15 @@
 :root {
   --transparent: transparent;
-  --black: rgba(0, 0, 0, 1);
-  --white: rgba(255, 255, 255, 1);
-  --dark: rgba(31, 31, 39, 1);
-  --light: rgba(223, 223, 231, 1);
-  --medium: rgba(127, 127, 135, 1);
-
   --transparent-tint: transparent;
   --transparent-shade: transparent;
+
+  --black: rgba(0, 0, 0, 1);
+  --white: rgba(255, 255, 255, 1);
+  --grey: rgba(127, 127, 127, 1);
+  --dark: rgba(31, 39, 47, 1);
+  --light: rgba(223, 231, 239, 1);
+  --medium: rgba(127, 135, 143, 1);
+
   --black-tint: rgba(0, 0, 0, 1);
   --black-shade: rgba(0, 0, 0, 1);
   --white-tint: rgba(255, 255, 255, 1);
@@ -20,12 +22,12 @@
   --dark2: rgba(63, 63, 63, 1);
   --dark3: rgba(95, 95, 95, 1);
 
-  --light-tint: rgba(239, 239, 243, 1);
-  --light-shade: rgba(207, 207, 215, 1);
-  --dark-tint: rgba(47, 47, 55, 1);
-  --dark-shade: rgba(15, 15, 23, 1);
-  --medium-tint: rgba(143, 143, 151, 1);
-  --medium-shade: rgba(111, 111, 119, 1);
+  --dark-tint: rgba(47, 55, 63, 1);
+  --dark-shade: rgba(15, 23, 31, 1);
+  --light-tint: rgba(239, 247, 255, 1);
+  --light-shade: rgba(207, 215, 223, 1);
+  --medium-tint: rgba(143, 151, 159, 1);
+  --medium-shade: rgba(111, 119, 127, 1);
 
   --red: rgba(239, 79, 119, 1);
   --orange: rgba(239, 123, 107, 1);
@@ -55,9 +57,13 @@
   --violet-shade: rgba(107, 42, 107, 1);
 }
 
-* {
+*,
+*::before,
+*::after {
   position: relative;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {

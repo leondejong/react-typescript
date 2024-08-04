@@ -1,24 +1,24 @@
-import styled from 'styled-components'
-import { BrowserRouter } from 'react-router-dom'
+import styled from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 
 import {
   StateProvider,
   persistedState,
   persistedReducer,
-  state as defaultState
-} from './state'
-import { Layout } from './components'
+  state as defaultState,
+} from "./state";
+import { Layout } from "./components";
 
 // Check if Object, excludes: Array, Date, Null, Set, String, Undefined
-export function isObject (v: unknown): boolean {
-  return Object.prototype.toString.call(v) === '[object Object]'
+export function isObject(v: unknown): boolean {
+  return Object.prototype.toString.call(v) === "[object Object]";
 }
 
 const Application = styled.div`
   display: flex;
   justify-content: center;
   min-height: 100vh;
-`
+`;
 
 const App = () => (
   <StateProvider
@@ -31,6 +31,6 @@ const App = () => (
       </Application>
     </BrowserRouter>
   </StateProvider>
-)
+);
 
-export default App
+export default App;
