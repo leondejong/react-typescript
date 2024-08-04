@@ -1,30 +1,34 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
-import { variable as v } from './'
+import type { Color } from "../state";
 
-interface Props {
-  background?: string
-  border?: string
-  color?: string
-  label?: string
-}
+import { variable as v } from "./";
 
-export const input = css`
+type InputProps = {
+  background?: Color;
+  border?: Color;
+  color?: Color;
+  label?: string;
+};
+
+export const input = css<InputProps>`
   min-width: 16rem;
   padding: 0.4375rem 0.9375rem;
-  border: 0.0625rem solid ${(props: Props) => v(props.border, 'medium')};
+  border: 0.0625rem solid ${(props: InputProps) => v(props.border, "medium")};
   outline: none;
   border-radius: 0.25rem;
   text-decoration: none;
-  background: ${(props: Props) => v(props.background, 'white')};
-  color: ${(props: Props) => v(props.color, 'dark')};
+  background: ${(props: InputProps) => v(props.background, "white")};
+  color: ${(props: InputProps) => v(props.color, "dark")};
   box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.25);
 
   &:hover,
   &:focus,
   &:active {
-    background: ${(props: Props) => v(props.background, 'white', '', '-tint')};
-    border-color: ${(props: Props) => v(props.border, 'medium', '', '-tint')};
+    background: ${(props: InputProps) =>
+      v(props.background, "white", "", "-tint")};
+    border-color: ${(props: InputProps) =>
+      v(props.border, "medium", "", "-tint")};
   }
 
   &:disabled,
@@ -34,12 +38,20 @@ export const input = css`
   }
 
   &::placeholder {
-    color: ${(props: Props) => v(props.label, 'medium', '', '-tint')};
+    color: ${(props: InputProps) => v(props.label, "medium", "", "-tint")};
   }
-`
+`;
 
-const Input = styled.input`
+const Input = styled.input<InputProps>`
   ${input}
-`
+`;
 
-export default Input
+const ItemInput = styled(Input)`
+  &::placeholder {
+    color: var(--medium);
+  }
+`;
+
+export { ItemInput };
+
+export default Input;

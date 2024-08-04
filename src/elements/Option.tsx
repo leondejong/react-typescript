@@ -1,36 +1,39 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { variable as v } from './'
+import type { Color } from "../state";
 
-interface Props {
-  background?: string
-  color?: string
-  colorActive?: string
-}
+import { variable as v } from "./";
 
-const Option = styled.option`
+type OptionProps = {
+  background?: Color;
+  color?: Color;
+  colorActive?: Color;
+};
+
+const Option = styled.option<OptionProps>`
   display: block;
   padding: 0.25rem;
-  color: ${(props: Props) => v(props.color, 'medium')};
+  color: ${(props: OptionProps) => v(props.color, "medium")};
 
   &:hover,
   &:focus,
   &:active {
-    background: ${(props: Props) => v(props.background, 'medium', '', '-tint')};
-    color: ${(props: Props) => v(props.colorActive, 'white')};
+    background: ${(props: OptionProps) =>
+      v(props.background, "medium", "", "-tint")};
+    color: ${(props: OptionProps) => v(props.colorActive, "white")};
     border-radius: 0.25rem;
   }
 
   &:checked {
-    background: ${(props: Props) => v(props.background, 'medium')}
+    background: ${(props: OptionProps) => v(props.background, "medium")}
       linear-gradient(
         0deg,
-        ${(props: Props) => v(props.background, 'medium')} 0%,
-        ${(props: Props) => v(props.background, 'medium')} 100%
+        ${(props: OptionProps) => v(props.background, "medium")} 0%,
+        ${(props: OptionProps) => v(props.background, "medium")} 100%
       );
-    color: ${(props: Props) => v(props.colorActive, 'white')};
+    color: ${(props: OptionProps) => v(props.colorActive, "white")};
     border-radius: 0.25rem;
   }
-`
+`;
 
-export default Option
+export default Option;

@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-interface Props {
-  children?: React.ReactNode
-}
+type FooterProps = {
+  children?: React.ReactNode;
+};
 
 const Footer = styled.footer`
   position: fixed;
@@ -11,19 +11,19 @@ const Footer = styled.footer`
   bottom: 0;
   width: 100%;
   text-align: right;
-`
+`;
 
 const Note = styled.p`
   margin: 1rem 1rem 1rem 2rem;
   font-size: 1rem;
-`
+`;
 
-function FooterComponent ({ children }: Props) {
+function FooterComponent({ children }: FooterProps) {
   return (
     <Footer>
       <Note>{children}</Note>
     </Footer>
-  )
+  );
 }
 
-export default FooterComponent
+export default FooterComponent;

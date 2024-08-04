@@ -1,11 +1,20 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { input } from './'
+import type { Color } from "../state";
 
-const TextArea = styled.textarea`
+import { input } from "./";
+
+type TextAreaProps = {
+  background?: Color;
+  border?: Color;
+  color?: Color;
+  label?: string;
+};
+
+const TextArea = styled.textarea<TextAreaProps>`
   ${input}
   resize: none;
   min-height: 8rem;
-`
+`;
 
-export default TextArea
+export default TextArea;
